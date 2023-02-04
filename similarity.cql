@@ -61,4 +61,4 @@ RETURN gds.util.asNode(node1).name AS actorName1,
     similarity
 LIMIT 10
 
-
+// The result is similar to a correlation matrix
