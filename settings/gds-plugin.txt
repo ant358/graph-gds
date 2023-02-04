@@ -1,0 +1,8 @@
+# add these to the settings file for the plugin
+dbms.security.procedures.unrestricted=gds.*
+dbms.security.procedures.allowlist=gds.*
+
+# memory settings for the projected graph
+dbms.memory.heap.initial_size
+dbms.memory.heap.max_size
+dbms.memory.pagecache.size
