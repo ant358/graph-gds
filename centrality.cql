@@ -64,3 +64,14 @@ ORDER BY influence DESCENDING, personName LIMIT 5
 // A variant of PageRank which assumes that relationships originating from low-degree 
 // nodes have a higher influence than relationships from high-degree nodes.
 
+
+// Example: 
+// Which actor has directed the most movies?
+CALL gds.graph.project('proj2', ['Actor','Movie'], 'DIRECTED');
+
+// Stream the result
+CALL gds.degree.stream('proj2')
+YIELD nodeId, score
+RETURN gds.util.asNode(nodeId).name AS actorName, score AS numberOfMoviesDirected
+ORDER BY numberOfMoviesDirected DESCENDING, actorName LIMIT 5
+
